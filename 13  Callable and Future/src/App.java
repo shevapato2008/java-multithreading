@@ -39,6 +39,7 @@ public class App {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
+			/* Try different methods of reporting execution exceptions. */
 			// Option 1
 			System.out.println(e);
 			// Option 2
