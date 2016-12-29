@@ -61,6 +61,28 @@ public class App {
  * });
  */
 
-
+/*
+ * http://stackoverflow.com/questions/14609778/actual-implementation-of-callable-and-future
+ * 
+ * Actual implementation of Callable and Future
+ * 
+ * The main implementation of the Future interface is the FutureTask class. It is used by the
+ * ExecutorService classes to represent a submitted job, etc.. Callable (like Runnable) is a
+ * simple interface that you implement yourself. It wraps a task that you want the
+ * ExecutorService thread-pools to execute. You should download the source jars for these
+ * classes and take a look at the Java code yourself.
+ * 
+ * Neither of these classes contain any JVM black magic or anything. For example, if you
+ * construct a Callable class, it won't run in another thread unless you submit it to a
+ * thread-pool. You can use the Callable in many different places that have nothing to do with
+ * threads.
+ * 
+ * The JVM "black magic" around Future and Callable is mostly contained in the Thread class.
+ * It has underlying native support which does the actual job of running your task in another
+ * thread. There is still a lot of Java code in it if you want to see what it does but there
+ * are native calls that the real magic.
+ * 
+ * Here's a good tutorial about how to use the executor services that were added to Java in 1.5.
+ */
 
 
